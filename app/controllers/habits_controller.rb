@@ -3,7 +3,8 @@ class HabitsController < ApplicationController
     end
     
     def create
-        Habit.create(habit_params)
+        Habit.create(title: habit_params[:title], purpose: habit_params[:purpose], reason: habit_params[:reason], user_id: current_user.id)
+        redirect_to controller: 'users', action: 'show', id: current_user.id
     end
     
     private
