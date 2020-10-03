@@ -8,8 +8,20 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <h1>
+      <a class="title" href="/">Habits</a>
+    </h1>
+    <% if user_signed_in? %>
+    <div class="menu-bar">
+      <ul class="menu-bar-tab">
+        <li><%= link_to "投稿する", new_habit_path, class: 'contents', method: :get %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, class: 'contents', method: :delete %></li>
+      </ul>
+    </div>
+    <% end %>
+    
+    </header>
     <%= yield %>
   </body>
 </html>
