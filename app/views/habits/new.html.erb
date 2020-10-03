@@ -1,13 +1,12 @@
 <div class="form">
-  <%= form_for('/habits', method: :post) do %>
+  <%= form_tag('/habits', method: :post) do %>
     <h2>
     習慣化したい行動を決めよう！
     </h2>
-    <input type="text" name="title" pleceholder="行動">
+    <input type="text" name="title" pleceholder="p">
     <textarea name="purpose" pleceholder="目的を書こう！" rows="10" cols="30"></textarea>
     <textarea name="reason" pleceholder="理由を明確にしよう！" rows="10" cols="30"></textarea>
     <input type="submit" value="SEND">
   <% end %>
 </div>
-
     
