@@ -7,6 +7,10 @@ class HabitsController < ApplicationController
         redirect_to controller: 'users', action: 'show', id: current_user.id
     end
     
+    def edit
+        @habit = Habit.find(params[:id])
+    end
+    
     private
     def habit_params
         params.permit(:title, :purpose, :reason)
