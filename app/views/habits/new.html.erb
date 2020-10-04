@@ -1,12 +1,15 @@
 <div class="form">
-  <%= form_tag('/habits', method: :post) do %>
+  <%= form_for(@habit) do |f| %>
     <h2>
     習慣化したい行動を決めよう！
     </h2>
-    <input type="text" name="title" pleceholder="p">
-    <textarea name="purpose" pleceholder="目的を書こう！" rows="10" cols="30"></textarea>
-    <textarea name="reason" pleceholder="理由を明確にしよう！" rows="10" cols="30"></textarea>
-    <input type="submit" value="SEND">
+    <%= f.label :title, "行動を決めよう！" %><br>
+    <%= f.text_field :title, placeholder: "習慣化したい行動", size: 30 %><br>
+    <%= f.label :purpose, "目的を定めよう！" %><br>
+    <%= f.text_area :purpose, placeholder: "目的" %><br>
+    <%= f.label :reason, "理由を明確化しよう!" %><br>
+    <%= f.text_area :reason, placeholder: "理由" %><br>
+    <%= f.submit "送信" %>
   <% end %>
 </div>
     

@@ -1,5 +1,6 @@
 class HabitsController < ApplicationController
     def new
+        @habit = Habit.new
     end
     
     def create
@@ -13,6 +14,6 @@ class HabitsController < ApplicationController
     
     private
     def habit_params
-        params.permit(:title, :purpose, :reason)
+        params.require(:habit).permit(:title, :purpose, :reason)
     end
 end
