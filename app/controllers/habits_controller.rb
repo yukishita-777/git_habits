@@ -12,6 +12,10 @@ class HabitsController < ApplicationController
         @habit = Habit.find(params[:id])
     end
     
+    def update
+        Habit.update(habit_params)
+    end
+    
     private
     def habit_params
         params.require(:habit).permit(:title, :purpose, :reason)
