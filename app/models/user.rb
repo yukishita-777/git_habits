@@ -6,4 +6,5 @@ class User < ApplicationRecord
          
   # association
   has_many :habits
+  has_many :steps
 end

@@ -2,7 +2,7 @@
 <p><%= @user.nickname %>さんの投稿</p>
     <% @habits.each do |habit| %>
     <ul>
-        <li><%= simple_format(habit.title) %></li>
+        <li><a class="habit-list", href="><%= simple_format(habit.title) %></a></li>
         <li><%= simple_format(habit.purpose) %></li>
         <li><%= simple_format(habit.reason) %></li>
     </ul>
