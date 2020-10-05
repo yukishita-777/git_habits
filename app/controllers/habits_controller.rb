@@ -16,6 +16,14 @@ class HabitsController < ApplicationController
         Habit.update(habit_params)
     end
     
+    def destroy
+        habit = Habit.find(params[:id])
+        if habit.user_id == current_user.id
+            habit.destroy
+            redirect_to controller: 'users', action: 'show', id: current_user.id
+        end
+    end
+    
     private
     def habit_params
         params.require(:habit).permit(:title, :purpose, :reason)

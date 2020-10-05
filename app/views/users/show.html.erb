@@ -1,3 +1,13 @@
 <!DOCTYPE>
-<p><%= @user.nickname %></p>
-<p><%= link_to '編集', edit_habit_path(@habit.id) %></p>
+<p><%= @user.nickname %>さんの投稿</p>
+    <% @habits.each do |habit| %>
+    <ul>
+        <li><%= simple_format(habit.title) %></li>
+        <li><%= simple_format(habit.purpose) %></li>
+        <li><%= simple_format(habit.reason) %></li>
+    </ul>
+    <ul>
+        <li><%= link_to '編集', edit_habit_path(habit.id) %></li>
+        <li><%= link_to '削除', habit_path(habit.id), method: :delete %></li>
+    </ul>
+<% end %>
