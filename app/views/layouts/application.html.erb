@@ -18,8 +18,8 @@
         <li><%= link_to "みんなの投稿", habits_path, class: 'contents', method: :get %></li>
         <li><%= link_to "投稿する", new_habit_path, class: 'contents', method: :get %></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, class: 'contents', method: :delete %></li>
-        <li><%= link_to "マイページ", user_path(current_user.id) class: 'contents' method: :get %></li>
-        <li><%= link_to "プロフィール編集", edit_user_path(current_user.id), class: 'contents', method: :get %></li
+        <li><%= link_to "マイページ", user_path(current_user.id), class: 'contents', method: :get %></li>
+        <li><%= link_to "プロフィール編集", edit_user_path(current_user.id), class: 'contents', method: :get %></li>
       </ul>
     </div>
     <% end %>
