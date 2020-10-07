@@ -1,0 +1,12 @@
+<div class="form">
+   <%= form_for(@step) do |f| %>
+    <h3>
+    ハードルを下げるのもありかも。。。？
+    </h3>
+    <%= f.label :action, "行動" %><br>
+    <%= f.text_field :action %><br>
+    <%= f.label :schedule, "スケジュール" %><br>
+    <%= f.text_area :schedule %><br>
+    <%= f.submit "送信" %>
+  <% end %>
+</div>

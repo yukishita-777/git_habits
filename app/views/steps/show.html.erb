@@ -1,0 +1,10 @@
+<!DOCTYPE>
+    <h3>
+    ステップ一覧
+    </h3>
+    <% @steps.each do |step| %>
+    <ul>
+        <li><%= simple_format(step.action) %></li>
+        <li><%= simple_format(step.schedule) %></li>
+    </ul>
+<% end %>

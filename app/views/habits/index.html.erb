@@ -1,0 +1,11 @@
+<!DOCTYPE>
+    <h3>
+    みんなの投稿
+    </h3>
+    <% @habits.each do |habit| %>
+    <ul>
+        <li><%= simple_format(habit.title) %></li>
+        <li><%= simple_format(habit.purpose) %></li>
+        <li><%= simple_format(habit.reason) %></li>
+    </ul>
+<% end %>

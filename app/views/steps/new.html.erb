@@ -1,0 +1,12 @@
+<div class="form">
+  <%= form_for(@step) do |f| %>
+    <h2>
+    習慣化するまでのステップを記載しよう！
+    </h2>
+    <%= f.label :action, "アクション" %><br>
+    <%= f.text_area :action %><br>
+    <%= f.label :schedule, "回数、日数を決めよう！" %><br>
+    <%= f.text_area :schedule, placeholder: "例：1日３回、週２回…etc" %><br>
+    <%= f.submit "送信" %>
+  <% end %>
+</div>
