@@ -1,5 +1,6 @@
 class StepsController < ApplicationController
     def new
+        @habit = Habit.find(params[:habit_id])
         @step = Step.new
     end
     
