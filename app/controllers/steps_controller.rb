@@ -9,6 +9,11 @@ class StepsController < ApplicationController
         @steps = @habits.steps.order(created_at: "DESC")
     end
     
+    def edit
+        @habit = Habit.find(params[:habit_id])
+        @step = Step.find(params[:id])
+    end
+    
     def create
         Step.create(step_params)
     end
