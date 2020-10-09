@@ -15,11 +15,12 @@ class StepsController < ApplicationController
     end
     
     def create
-        Step.create(step_params)
+        Step.create!(step_params)
+        redirect_to controller: :users, action: :show, id: current_user.id
     end
     
     private
     def step_params
-        params.require(:step).permit(:action, :schedule)
+        params.require(:step).permit(:action, :schedule).merge(habit_id: params[:habit_id], user_id: current_user.id)
     end
 end
