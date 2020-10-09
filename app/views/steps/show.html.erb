@@ -4,7 +4,13 @@
     </h3>
     <% @steps.each do |step| %>
     <ul>
+        <p>アクション</p>
         <li><%= simple_format(step.action) %></li>
+        <p>回数、日数</p>
         <li><%= simple_format(step.schedule) %></li>
+    </ul>
+    <ul>
+        <li><%= link_to "編集", edit_habit_step_path(@habits, step.id) %></li>
+        <li><%= link_to "削除", habit_step_path(@habits, step.id), method: :delete %></li>
     </ul>
 <% end %>
