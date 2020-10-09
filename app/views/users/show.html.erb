@@ -2,7 +2,7 @@
 <p><%= @user.nickname %>さんの投稿</p>
     <% @habits.each do |habit| %>
     <ul>
-        <li><%= link_to simple_format(habit.title), habit_step_path(params[:id], params[:id]), class: 'habit-list', method: :get %></li>
+        <li><%= link_to simple_format(habit.title), habit_step_path(habit.id, params[:id]), class: 'habit-list', method: :get %></li>
         <li><%= simple_format(habit.purpose) %></li>
         <li><%= simple_format(habit.reason) %></li>
     </ul>

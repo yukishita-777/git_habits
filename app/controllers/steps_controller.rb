@@ -6,7 +6,7 @@ class StepsController < ApplicationController
     
     def show
         @habits = Habit.where(id: params[:habit_id]).first
-        @steps = @habits.steps.order(created_at: "DESC")
+        @steps = @habits.steps.order(created_at: "ASC")
     end
     
     def edit
@@ -15,7 +15,7 @@ class StepsController < ApplicationController
     end
     
     def create
-        Step.create!(step_params)
+        Step.create(step_params)
         redirect_to controller: :users, action: :show, id: current_user.id
     end
     
