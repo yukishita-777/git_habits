@@ -10,10 +10,10 @@
         <li class="habit-list">理由</li>
         <li class="habit-post"><%= simple_format(habit.reason) %></li>
     </ul>
-    <ul>
-        <li><%= link_to 'ステップ作成', new_habit_step_path(habit.id) %></li>
-        <li><%= link_to '編集', edit_habit_path(habit.id) %></li>
-        <li><%= link_to '削除', habit_path(habit.id), method: :delete %></li>
+    <ul class="link">
+        <li class="link-button"><%= link_to 'ステップ作成', new_habit_step_path(habit.id), class: 'contents-link' %></li>
+        <li class="link-button"><%= link_to '編集', edit_habit_path(habit.id), class: 'contents-link' %></li>
+        <li class="link-button"><%= link_to '削除', habit_path(habit.id), class: 'contents-link', method: :delete %></li>
     </ul>
 <% end %>
 </div>
