@@ -1,10 +1,14 @@
 <!DOCTYPE>
-<p><%= @user.nickname %>さんの投稿</p>
+<div class="post">
+<p class="user-name"><%= @user.nickname %>さんの投稿</p>
     <% @habits.each do |habit| %>
-    <ul>
-        <li><%= link_to simple_format(habit.title), habit_step_path(habit.id, params[:id]), class: 'habit-list', method: :get %></li>
-        <li><%= simple_format(habit.purpose) %></li>
-        <li><%= simple_format(habit.reason) %></li>
+    <ul class="object">
+        <li class="habit-list">習慣化したい行動</li>
+        <li class="habit-post"><%= link_to simple_format(habit.title), habit_step_path(habit.id, params[:id]), method: :get %></li>
+        <li class="habit-list">目的</li>
+        <li class="habit-post"><%= simple_format(habit.purpose) %></li>
+        <li class="habit-list">理由</li>
+        <li class="habit-post"><%= simple_format(habit.reason) %></li>
     </ul>
     <ul>
         <li><%= link_to 'ステップ作成', new_habit_step_path(habit.id) %></li>
@@ -12,3 +16,4 @@
         <li><%= link_to '削除', habit_path(habit.id), method: :delete %></li>
     </ul>
 <% end %>
+</div>
