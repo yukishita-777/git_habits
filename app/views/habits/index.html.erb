@@ -3,9 +3,16 @@
     みんなの投稿
     </h3>
     <% @habits.each do |habit| %>
-    <ul>
-        <li><%= simple_format(habit.title) %></li>
-        <li><%= simple_format(habit.purpose) %></li>
-        <li><%= simple_format(habit.reason) %></li>
+    <ul class="object">
+        <li class="user-nickname"><span class="nickname-text"><%= habit.user.nickname %>さんの投稿</span></li>
+        <li class="habit-list">習慣化したい行動</li>
+        <li class="habit-post"><%= simple_format(habit.title) %></li>
+        <li class="habit-list">目的</li>
+        <li class="habit-post"><%= simple_format(habit.purpose) %></li>
+        <li class="habit-list">理由</li>
+        <li class="habit-post"><%= simple_format(habit.reason) %></li>
+    </ul>
+    <ul class="link">
+        <li class="link-button"><%= link_to 'ステップ一覧', habit_step_path(habit.id, habit.steps), class: 'contents-link' %></li>
     </ul>
 <% end %>

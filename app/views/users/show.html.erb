@@ -4,7 +4,7 @@
     <% @habits.each do |habit| %>
     <ul class="object">
         <li class="habit-list">習慣化したい行動</li>
-        <li class="habit-post"><%= link_to simple_format(habit.title), habit_step_path(habit.id, params[:id]), method: :get %></li>
+        <li class="habit-post"><%= link_to simple_format(habit.title) %></li>
         <li class="habit-list">目的</li>
         <li class="habit-post"><%= simple_format(habit.purpose) %></li>
         <li class="habit-list">理由</li>
@@ -12,6 +12,7 @@
     </ul>
     <ul class="link">
         <li class="link-button"><%= link_to 'ステップ作成', new_habit_step_path(habit.id), class: 'contents-link' %></li>
+        <li class="link-button"><%= link_to 'ステップ一覧', habit_step_path(habit.id, habit.steps), class: 'contents-link' %></li>
         <li class="link-button"><%= link_to '編集', edit_habit_path(habit.id), class: 'contents-link' %></li>
         <li class="link-button"><%= link_to '削除', habit_path(habit.id), class: 'contents-link', method: :delete %></li>
     </ul>
