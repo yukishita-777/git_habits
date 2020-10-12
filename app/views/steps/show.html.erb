@@ -1,16 +1,19 @@
 <!DOCTYPE>
-    <h3>
+    <h2 class="message">
     ステップ一覧
-    </h3>
+    </h2>
+    <h3 class="habit-title">♦︎習慣化したい行動：<em><%= @habits.title %></em></h3>
     <% @steps.each do |step| %>
-    <ul>
-        <p>アクション</p>
-        <li><%= simple_format(step.action) %></li>
-        <p>回数、日数</p>
-        <li><%= simple_format(step.schedule) %></li>
+    <ul class="object">
+        <li class="habit-list">アクション</li>
+        <li class="habit-post"><%= simple_format(step.action) %></li>
+        <li class="habit-list">回数、日数</li>
+        <li class="habit-post"><%= simple_format(step.schedule) %></li>
     </ul>
-    <ul>
-        <li><%= link_to "編集", edit_habit_step_path(@habits, step.id) %></li>
-        <li><%= link_to "削除", habit_step_path(@habits, step.id), method: :delete %></li>
+    <% if step.user_id == current_user.id %>
+    <ul class ="link">
+        <li class="link-button"><%= link_to "編集", edit_habit_step_path(@habits, step.id), class: 'contents-link' %></li>
+        <li class="link-button"><%= link_to "削除", habit_step_path(@habits, step.id), class: 'contents-link', method: :delete %></li>
+    <% end %>
     </ul>
 <% end %>

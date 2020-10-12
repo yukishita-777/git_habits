@@ -65,3 +65,5 @@ gem 'devise'
 gem 'therubyracer'
 gem 'jquery-rails'
 gem "font-awesome-rails"
+gem 'devise-i18n'
+gem 'devise-i18n-views'

@@ -1,10 +1,10 @@
 <div class="profile-form">
     <%= form_for(@user) do |f| %>
-    <h2>
+    <h2 class="message">
     プロフィール編集
     </h2>
     <%= f.label :nickname, "ニックネーム" %><br>
-    <%= f.text_field :nickname %><br>
-    <%= f.submit "送信" %>
+    <%= f.text_field :nickname, class: "pro" %><br>
+    <%= f.submit "送信", class: "btn" %>
     <% end %>
 </div>

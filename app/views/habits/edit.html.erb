@@ -1,17 +1,14 @@
 <div class="form">
    <%= form_for(@habit) do |f| %>
-    <h2>
-    行き詰まったら、、修正しよう！
-    </h2>
-    <h3>
-    ハードルを下げるのもありかも。。。？
+    <h2 class="message">
+    習慣化したい行動の編集
     </h3>
-    <%= f.label :title, "行動を決めよう！" %><br>
-    <%= f.text_field :title, placeholder: "習慣化したい行動", size: 30 %><br>
-    <%= f.label :purpose, "目的を定めよう！" %><br>
-    <%= f.text_area :purpose, placeholder: "目的" %><br>
-    <%= f.label :reason, "理由を明確化しよう!" %><br>
-    <%= f.text_area :reason, placeholder: "理由" %><br>
-    <%= f.submit "送信" %>
+    <%= f.label :title, "行動の編集" %><br>
+    <%= f.text_field :title, class: "text-long", placeholder: "習慣化したい行動", size: 30 %><br>
+    <%= f.label :purpose, "目的の編集" %><br>
+    <%= f.text_area :purpose, class: "text-long", placeholder: "目的" %><br>
+    <%= f.label :reason, "理由の編集" %><br>
+    <%= f.text_area :reason, class: "text-long", placeholder: "理由" %><br>
+    <%= f.submit "送信", class: "btn" %>
   <% end %>
 </div>
