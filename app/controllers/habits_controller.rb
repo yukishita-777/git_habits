@@ -1,6 +1,6 @@
 class HabitsController < ApplicationController
     def index
-        @habits = Habit.all
+        @habits = Habit.order('created_at DESC').page(params[:page]).per(5)
     end
     
     def new

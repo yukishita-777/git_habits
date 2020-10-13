@@ -16,3 +16,4 @@
         <li class="link-button"><%= link_to 'ステップ一覧', habit_step_path(habit.id, habit.steps), class: 'contents-link' %></li>
     </ul>
 <% end %>
+<%= paginate @habits %>

@@ -6,7 +6,7 @@ class StepsController < ApplicationController
     
     def show
         @habits = Habit.where(id: params[:habit_id]).first
-        @steps = @habits.steps.order(created_at: "ASC")
+        @steps = @habits.steps.order(created_at: "ASC").page(params[:page]).per(5)
     end
     
     def edit
