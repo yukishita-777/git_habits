@@ -4,7 +4,7 @@
     <% @habits.each do |habit| %>
     <ul class="object">
         <li class="habit-list">習慣化したい行動</li>
-        <li class="habit-post"><%= link_to simple_format(habit.title) %></li>
+        <li class="habit-post"><%= simple_format(habit.title) %></li>
         <li class="habit-list">目的</li>
         <li class="habit-post"><%= simple_format(habit.purpose) %></li>
         <li class="habit-list">理由</li>
