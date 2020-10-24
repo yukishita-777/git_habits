@@ -1,3 +1,4 @@
+<% if @user.id == current_user.id %>
 <section id="modal" class="hidden">
     <p>習慣化までのステップを作成しよう！<br>
     ゴールまでの道のりが見えれば、モチベーションup!!
@@ -10,6 +11,7 @@
     ヒント！
   </div>
 <div id="mask" class="hidden"></div>
+<% end %>
 
 <div class="post">
 <h2 class="user-name"><%= @user.nickname %>さんの投稿</h2>
