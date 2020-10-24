@@ -11,10 +11,12 @@
         <li class="habit-post"><%= simple_format(habit.reason) %></li>
     </ul>
     <ul class="link">
-        <li class="link-button"><%= link_to 'ステップ作成', new_habit_step_path(habit.id), class: 'contents-link' %></li>
         <li class="link-button"><%= link_to 'ステップ一覧', habit_step_path(habit.id, habit.steps), class: 'contents-link' %></li>
+        <% if habit.user.id == current_user.id %> 
+        <li class="link-button"><%= link_to 'ステップ作成', new_habit_step_path(habit.id), class: 'contents-link' %></li>
         <li class="link-button"><%= link_to '編集', edit_habit_path(habit.id), class: 'contents-link' %></li>
         <li class="link-button"><%= link_to '削除', habit_path(habit.id), class: 'contents-link', method: :delete %></li>
+        <% end %>
     </ul>
 <% end %>
 </div>

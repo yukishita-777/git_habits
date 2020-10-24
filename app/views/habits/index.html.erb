@@ -4,7 +4,7 @@
     </h3>
     <% @habits.each do |habit| %>
     <ul class="object">
-        <li class="user-nickname"><span class="nickname-text"><%= habit.user.nickname %>さんの投稿</span></li>
+        <li class="user-nickname"><%= link_to habit.user.nickname, user_path(habit.user.id), class: 'nickname-text' %>さんの投稿</li>
         <li class="habit-list">習慣化したい行動</li>
         <li class="habit-post"><%= simple_format(habit.title) %></li>
         <li class="habit-list">目的</li>
