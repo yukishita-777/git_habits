@@ -1,4 +1,16 @@
-<!DOCTYPE>
+<section id="modal" class="hidden">
+    <p>習慣化までのステップを作成しよう！<br>
+    ゴールまでの道のりが見えれば、モチベーションup!!
+    </p>
+    <div id="close">
+    閉じる
+    </div>
+</section>
+  <div id="open">
+    ヒント！
+  </div>
+<div id="mask" class="hidden"></div>
+
 <div class="post">
 <h2 class="user-name"><%= @user.nickname %>さんの投稿</h2>
     <% @habits.each do |habit| %>
@@ -20,4 +32,5 @@
     </ul>
 <% end %>
 </div>
+<%= javascript_include_tag "user.js" %>
 <%= paginate @habits %>
